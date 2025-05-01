@@ -1,9 +1,7 @@
-{{config(materialized='table')}}
-
 select 
     c.customerid, 
-    concat(firstname, ' ', lastname) AS "Full Name",
-    count(OrderId)
+    concat(firstname, ' ', lastname) AS "fullname",
+    count(OrderId) as cnt
 from 
     test.customers as c
 left join 
